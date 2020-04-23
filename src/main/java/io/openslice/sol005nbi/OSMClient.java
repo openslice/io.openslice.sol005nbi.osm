@@ -10,7 +10,11 @@ public interface OSMClient {
 	String getMANOApiEndpoint();
 
 	JSONObject getNSInstanceInfo(String instanceId);
-
+	
+	JSONObject getNSInstanceContentInfo(String instanceId);
+	
+	JSONObject getNSLCMDetails(String nsLcmOpOccId);
+	
 	ResponseEntity<String> createVNFDPackage();
 
 	ResponseEntity<String> deleteVNFDPackage(String vnfd_id);
