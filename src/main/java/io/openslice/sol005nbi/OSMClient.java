@@ -40,10 +40,14 @@ public interface OSMClient {
 	
 	ResponseEntity<String> uploadVNFDPackageContent(String vnfd_id, String pLocation) throws IOException;
 
+	ResponseEntity<String> uploadVNFDPackageContent(String vnfd_id, byte[] allBytes) throws IOException;
+
 	ResponseEntity<String> createNSDPackage();
 
 	ResponseEntity<String> uploadNSDPackageContent(String nsd_id, String pLocation) throws IOException;
 
+	ResponseEntity<String> uploadNSDPackageContent(String nsd_id, byte[] allBytes) throws IOException;
+		
 	ResponseEntity<String> deleteNSDPackage(String nsd_id);
 
 	ResponseEntity<String> getVNFInstanceInfoNew(String string);
@@ -55,5 +59,5 @@ public interface OSMClient {
 	ResponseEntity<String> deleteNSInstanceNew(String instanceId, boolean force);
 
 	ResponseEntity<String> terminateNSInstanceNew(String instanceId);
-	
+
 }
