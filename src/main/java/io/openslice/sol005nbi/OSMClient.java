@@ -34,6 +34,8 @@ public interface OSMClient {
 	
 	JSONObject getNSLCMDetails(String nsLcmOpOccId);
 	
+	ResponseEntity<String> getNSLCMDetailsList();
+	
 	ResponseEntity<String> createVNFDPackage();
 
 	ResponseEntity<String> deleteVNFDPackage(String vnfd_id);
@@ -59,5 +61,7 @@ public interface OSMClient {
 	ResponseEntity<String> deleteNSInstanceNew(String instanceId, boolean force);
 
 	ResponseEntity<String> terminateNSInstanceNew(String instanceId);
+	
+	ResponseEntity<String> actionNSInstance(String ns_instance_id, String payload); 	
 
 }
