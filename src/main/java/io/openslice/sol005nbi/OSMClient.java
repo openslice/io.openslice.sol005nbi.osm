@@ -33,8 +33,10 @@ public interface OSMClient {
 	JSONObject getNSInstanceContentInfo(String instanceId);
 	
 	JSONObject getNSLCMDetails(String nsLcmOpOccId);
-	
+		
 	ResponseEntity<String> getNSLCMDetailsList();
+	
+	String getNSLCMDetailsListByNSID(String nsid);
 	
 	ResponseEntity<String> createVNFDPackage();
 
@@ -63,5 +65,7 @@ public interface OSMClient {
 	ResponseEntity<String> terminateNSInstanceNew(String instanceId);
 	
 	ResponseEntity<String> actionNSInstance(String ns_instance_id, String payload); 	
+
+	ResponseEntity<String> scaleNSInstance(String ns_instance_id, String payload); 	
 
 }
