@@ -1,6 +1,7 @@
+package io.openslice.sol005nbi;
 /*-
  * ========================LICENSE_START=================================
- * io.openslice.sol005nbi.osm5
+ * io.openslice.sol007nbi.osm
  * %%
  * Copyright (C) 2019 openslice.io
  * %%
@@ -17,19 +18,19 @@
  * limitations under the License.
  * =========================LICENSE_END==================================
  */
-package io.openslice.sol005nbi.OSMUtil;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
-public interface OSMNSExtractor {
-
-	public Object extractNsDescriptor() throws IOException  ;	
-
-	public String getDescriptorYAMLfile() ;
-
-	public void setDescriptorYAMLfile(String descriptorYAMLfile) ;
+/**
+ * @author ctranoris
+ *
+ */
+public class ANSCreateInstanceRequestPayload extends ANSInstantiateInstanceRequestPayload
+{	
+	private final String notificationType = "NsIdentifierCreationNotification";
 	
-    public ByteArrayOutputStream getIconfilePath() ;
-       
+	public ANSCreateInstanceRequestPayload()
+	{
+		super();
+	}		
 }
+
