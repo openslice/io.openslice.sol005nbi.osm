@@ -1,7 +1,7 @@
 package io.openslice.sol005nbi;
 /*-
  * ========================LICENSE_START=================================
- * io.openslice.sol005nbi.osm8
+ * io.openslice.sol005nbi
  * %%
  * Copyright (C) 2019 openslice.io
  * %%
@@ -189,31 +189,6 @@ public class ANSInstantiateInstanceRequestPayload
 	public void setVld(List<Vld> vld) {
 		this.vld = vld;
 	}
-
-	
-//	public NSInstantiateInstanceRequestPayload(String nsName, String vimAccountId, String nsdId)
-//	{
-//		this.nsName = nsName;
-//		this.vimAccountId = vimAccountId;
-//		// Here we need to get the ExperimentOnBoardDescriptor based on the Experiment.
-//		// An Experiment might have multiple OnBoardDescriptors if it is OnBoarded to multiple OSM MANOs.
-//		// We temporarily select the first (and most probably the only one). 
-//		// Otherwise the user needs to define the OSM MANO where the Experiment is OnBoarded in order to instantiate.
-//		this.nsdId = nsdId;
-//		OSM8Client osm8client = new OSM8client
-//		NSD nsd_tmp = getNSDbyID(nsdId);
-//		Integer count=1;
-//		// READ the NSD from the OSM and get the vnfds and form the payload
-////		for(DeploymentDescriptorVxFPlacement tmp : deploymentdescriptor.getVxfPlacements())
-////		{
-////			VnF vnf_tmp = new VnF();
-////			vnf_tmp.memberVnFIndex=count.toString();
-////			vnf_tmp.vimAccount = tmp.getInfrastructure().getVIMid();
-////			this.vnf.add(vnf_tmp);
-////			count++;
-////		}
-//		// READ the NSD from the OSM and get the vlds and form the payload
-//	}
 	
 	public String toJSON()
 	{

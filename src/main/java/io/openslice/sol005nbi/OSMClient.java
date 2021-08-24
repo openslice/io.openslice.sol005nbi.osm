@@ -67,5 +67,13 @@ public interface OSMClient {
 	ResponseEntity<String> actionNSInstance(String ns_instance_id, String payload); 	
 
 	ResponseEntity<String> scaleNSInstance(String ns_instance_id, String payload); 	
+	
+	ResponseEntity<String> getVIMs();
+	
+	ResponseEntity<String> getVNFDescriptorsList();
 
+	ResponseEntity<String> getNSDescriptorsList();
+	
+	ResponseEntity<String> getNSInstancesList();
+	
 }
