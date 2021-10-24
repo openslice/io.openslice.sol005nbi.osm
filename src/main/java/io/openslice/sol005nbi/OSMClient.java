@@ -29,6 +29,8 @@ public interface OSMClient {
 	String getMANOApiEndpoint();
 
 	JSONObject getNSInstanceInfo(String instanceId);
+
+	JSONObject getVNFInstanceInfo(String instanceId);
 	
 	JSONObject getNSInstanceContentInfo(String instanceId);
 	
