@@ -75,5 +75,7 @@ public interface OSMClient {
 	ResponseEntity<String> getNSDescriptorsList();
 	
 	ResponseEntity<String> getNSInstancesList();
+
+	JSONObject getVNFInstanceInfo(String instanceId);
 	
 }
