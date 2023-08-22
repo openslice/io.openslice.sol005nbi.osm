@@ -25,6 +25,15 @@
         </license>
     </licenses>
 
+    <properties>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <salGeneratorPath>${project.build.directory}/generated-sources/mdsal-binding</salGeneratorPath>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-license-plugin.version>2.0.0</maven-license-plugin.version>
+		<license.licenseName>apache_v2</license.licenseName>
+		<spring.boot-version>3.1.2</spring.boot-version>
+    </properties>
+    
 	<pluginRepositories>
 		<pluginRepository>
 			<id>opendaylight-release</id>
@@ -38,11 +47,6 @@
 		</pluginRepository>
 	</pluginRepositories>
 
-	<parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.0</version>
-    </parent>
     
 	<repositories>
 		<repository>
@@ -58,13 +62,6 @@
 	</repositories>
 	   
 
-    <properties>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <salGeneratorPath>${project.build.directory}/generated-sources/mdsal-binding</salGeneratorPath>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven-license-plugin.version>2.0.0</maven-license-plugin.version>
-		<license.licenseName>apache_v2</license.licenseName>
-    </properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -74,10 +71,29 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+			<!-- Spring Boot BOM -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring.boot-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	
 	<dependencies>
+		<!-- Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 		<dependency>
 		    <groupId>com.google.code.findbugs</groupId>
 		    <artifactId>jsr305</artifactId>
@@ -114,12 +130,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            </dependency>        
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <type>jar</type>
-        </dependency>
+            </dependency>    
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpcore</artifactId>
